@@ -1,7 +1,7 @@
 package com.example.room_reservation_test.Exception;
 
-public class ReservationException extends RuntimeException {
-    public ReservationException(String s) {
+public class RoomException extends RuntimeException {
+    public RoomException(String s) {
         super(s);
     }
 }

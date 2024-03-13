@@ -1,4 +1,4 @@
-package com.example.demo.exceptions;
+package com.example.room_reservation_test.Exception;
 
 import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpStatus;
@@ -16,15 +16,17 @@ import java.util.stream.Collectors;
 
 @ControllerAdvice
 public class GlobalExceptionHandler extends ResponseEntityExceptionHandler {
-    @ExceptionHandler(BookNotFoundException.class)
-    public ResponseEntity<String> handlerBookNotFoundException(BookNotFoundException ex){
+
+    @ExceptionHandler(ReservationException.class)
+    public ResponseEntity<String> handlerReservationException(ReservationException ex) {
         return new ResponseEntity<>(ex.getMessage(), HttpStatus.NOT_FOUND);
     }
 
-    @ExceptionHandler(AuthorNotFoundException.class)
-    public ResponseEntity<String> handlerAuthorNotFoundException(AuthorNotFoundException ex){
+    @ExceptionHandler(RoomException.class)
+    public ResponseEntity<String> handlerAuthorNotFoundException(RoomException ex) {
         return new ResponseEntity<>(ex.getMessage(), HttpStatus.NOT_FOUND);
     }
+
     @Override
     protected ResponseEntity<Object> handleMethodArgumentNotValid(MethodArgumentNotValidException ex, HttpHeaders headers,
                                                                   HttpStatusCode status, WebRequest request) {
